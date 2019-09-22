@@ -1,24 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { Route } from 'react-router-dom';
+
+import './reset.scss';
+import delighters from './delighters';
+import ScrollTop from './ScrollToTop';
+import Home from './pages/homepage/homepage.component';
+import About from './pages/aboutpage/aboutpage.component';
+import Projects from './pages/projectspage/projectspage.component';
+import Project from './pages/projectpage/projectpage.component';
 
 function App() {
+  const mouse = () => {
+    var hoverLink = document.querySelectorAll('a');
+    Array.from(hoverLink).forEach(link => {
+        link.addEventListener('mouseenter', function(event) {
+          document.querySelector('.cursor').classList.add('is-active');
+          document.querySelector('.follower').classList.add('is-active');
+        });
+        link.addEventListener('mouseleave', () => {
+          document.querySelector('.cursor').classList.remove('is-active');
+          document.querySelector('.follower').classList.remove('is-active');
+        });
+    });
+  }
+  useEffect(
+    () => {
+      mouse();
+      delighters.init();
+    },[]
+)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className='load-animation'></div>
+      <ScrollTop>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/about' component={About} />
+        <Route exact path='/projects' component={Projects} />
+        <Route exact path='/project/:title' component={Project} />
+      </ScrollTop>
     </div>
   );
 }
