@@ -46,7 +46,7 @@ const ProjectsPreview = ()=> {
                             <li className='animated animatedFadeInUp fadeInUp' data-delighter>{project.id}</li>
                             <li className='animated animatedFadeInUp fadeInUp' data-delighter><img src={`${project.imgUrl}`} alt=""/></li>
                         </ul>
-                        <div className='project-texts'>
+                        <div className='project-texts container'>
                             <h2 className='animated animatedFadeInUp fadeInUp' data-delighter>{project.title}</h2>
                             <p className='animated animatedFadeInUp fadeInUp' data-delighter>{project.description}</p>
                             <Link to={`/project/${project.url}`} className='red-link red-btn animated animatedFadeInUp fadeInUp' data-delighter>See more</Link>
