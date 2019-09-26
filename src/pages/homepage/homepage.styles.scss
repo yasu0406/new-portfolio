@@ -208,9 +208,8 @@ nav {
                 box-shadow: 0 10px 10px -10px #444;
             }
             li:last-child {
-                background-color: #666;
                 width: 300px;
-                height: 300px;
+                height: auto;
                 display: flex;
                 align-items: center;
             }
@@ -219,6 +218,7 @@ nav {
                 justify-content: center;
                 flex-direction: column;
                 p {
+                    margin-top: 10px;
                     margin-bottom: 30px;
                 }
             }
@@ -263,6 +263,9 @@ nav {
         }
     }
     @media screen and (max-width: 1024px) {
+        h2 {
+            font-size: 5rem;
+        }
         @keyframes bg-color-animation {
             0% {
                 width: 100%;
@@ -273,6 +276,9 @@ nav {
         }
     }
     @media screen and (max-width: 768px) {
+        h2 {
+            font-size: 3.5rem;
+        }
         section {
             height: auto;
             padding: 0;
