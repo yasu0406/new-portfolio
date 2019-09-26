@@ -38,10 +38,10 @@
             }
         }
         .close-link {
-            position: absolute;
-            right: 50px;
-            bottom: 50px;
-            transform: rotate( -90deg );
+            margin-top: 50px;
+            margin-right: 20px;
+            float: right;
+            clear: both;
         }
     }
     @media screen and (max-width: 468px){
