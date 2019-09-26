@@ -1,5 +1,4 @@
-import React, {useEffect, useContext} from 'react';
-import { Link } from 'react-router-dom';
+import React, {useState, useEffect, useContext} from 'react';
 
 import { mousePointer } from '../../main';
 import delighters from '../../delighters';
@@ -8,17 +7,30 @@ import ProjectsContext from '../../contexts/projects/projects.context';
 import './projectpage.styles.scss';
 
 const Project = (props) => {
+    const [navColor, setNavColor] = useState('');
+
     const projects = useContext(ProjectsContext);
     const projectDetail = projects.filter(project => project.url === props.match.params.title);
-    const {title, description, imgUrl, bgColor, viewLink} = projectDetail[0];
+    const {title, description, imgUrl, bgColor, viewLink, projectImg01, projectImg02, projectImg03} = projectDetail[0];
     const mvStyle = {
         backgroundColor: `${bgColor}`,
         backgroundImage: `url(${imgUrl})`,
       };
+
+    const handleScroll = () => {
+        let y = window.pageYOffset;
+        if(y > 800) {
+            setNavColor('text-red');
+        } else {
+            setNavColor('');
+        }
+    }
+    
     useEffect(()=> {
         delighters.init();
         document.querySelector('body').classList.add('project');
         mousePointer();
+        window.addEventListener('scroll', handleScroll);
         return () => {
             document.querySelector('body').classList.remove('project');
             document.querySelector('.load-animation').classList.remove('started');
@@ -28,7 +40,7 @@ const Project = (props) => {
     return(
         <>
         <nav>
-            <Link className='animated animatedFadeInUp fadeInUp text-red' onClick={() => props.history.goBack()}>Back</Link>
+            <a className={`animated animatedFadeInUp fadeInUp back-link ${navColor}`} onClick={() => props.history.goBack()}>Back</a>
         </nav>
         <div className='main-visual' style={mvStyle}>
             <h1 className='animated animatedFadeInUp fadeInUp'>{title}</h1>
@@ -44,7 +56,7 @@ const Project = (props) => {
                         <li>September 2019</li>
                         <li className='text-red'>
                             {
-                                viewLink ? <a href={viewLink} target='_blank'>View</a> : 'Coming soon...'
+                                viewLink ? <a　rel="noreferrer noopener" href={viewLink} target='_blank'>View</a> : 'Coming soon...'
                             }
                             </li>
                     </ul>
@@ -60,13 +72,13 @@ const Project = (props) => {
                 </li>
             </ul>
             <div className='animated animatedFadeInUp fadeInUp' data-delighter>
-                <p><img src='/images/img01.jpg' alt=""/></p>
+                <p><img src={projectImg01} alt={title}/></p>
             </div>
             <div className='animated animatedFadeInUp fadeInUp' data-delighter>
-                <p><img src='/images/img01.jpg' alt=""/></p>
+                <p><img src={projectImg02} alt={title}/></p>
             </div>
             <div className='animated animatedFadeInUp fadeInUp' data-delighter>
-                <p><img src='/images/img01.jpg' alt=""/></p>
+                <p><img src={projectImg03} alt={title}/></p>
             </div>
         </section>
         </>
