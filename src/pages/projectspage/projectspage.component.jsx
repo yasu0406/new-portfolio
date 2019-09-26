@@ -27,7 +27,7 @@ const Projects = () => {
             {
                 projects.map(project => {
                     return(
-                        <li className='animated animatedFadeInUp fadeInUp' key={project.title}><Link to={`/project/${project.url}`}>{project.title}</Link><p style={{backgroundColor:`${project.bgColor}`}}><img src={project.imgUrl} alt={project.title}/></p></li>
+                        <li className='animated animatedFadeInUp fadeInUp' key={project.title}><Link to={`/project/${project.url}`}>{project.title}</Link><p style={{backgroundColor:`${project.bgColor}`}}><img src={project.thumbnail} alt={project.title}/></p></li>
                         )
                 })
             }
