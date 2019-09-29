@@ -255,7 +255,16 @@ a, .text-red {
     opacity: 0;
     animation-name: fadeInUp;
     -webkit-animation-name: fadeInUp;
-    animation-delay: 2s;
+    animation-delay: 1s;
+}
+
+.home {
+    .fadeInUp.started {
+        opacity: 0;
+        animation-name: fadeInUp;
+        -webkit-animation-name: fadeInUp;
+        animation-delay: 2s;
+    }
 }
 
 .bottom-box {
@@ -328,6 +337,6 @@ a, .text-red {
         opacity: 0;
         animation-name: fadeInUp;
         -webkit-animation-name: fadeInUp;
-        animation-delay: 3.5s;
+        animation-delay: 2.5s;
     }
 }
