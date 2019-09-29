@@ -10,7 +10,8 @@ const PROJECTS_DATA = [
         'projectImg03' : '/images/projects01-img-03.jpg',
         'bgColor': '#44C5C2',
         'url': 'jk-excellence',
-        'viewLink': 'https://jkdev.yasuhiro-k.com/'
+        'viewLink': 'https://jkdev.yasuhiro-k.com/',
+        'date': 'June 1, 2019'
     },
     {
         'id': '02',
@@ -23,7 +24,8 @@ const PROJECTS_DATA = [
         'projectImg03' : '/images/projects02-img-03.jpg',
         'bgColor': '#1F2E96',
         'url': 'metal-revision',
-        'viewLink': 'http://www.metal-rev.co.jp/'
+        'viewLink': 'http://www.metal-rev.co.jp/',
+        'date': 'February 1, 2019'
     },
     {
         'id': '03',
@@ -36,7 +38,8 @@ const PROJECTS_DATA = [
         'projectImg03' : '/images/projects03-img-03.jpg',
         'bgColor': '#00807C',
         'url': 'soccer-meet',
-        'viewLink': ''
+        'viewLink': '',
+        'date': 'July 1, 2019'
     },
     {
         'id': '04',
@@ -49,7 +52,8 @@ const PROJECTS_DATA = [
         'projectImg03' : '/images/projects04-img-03.jpg',
         'bgColor': '#DB2D2E',
         'url': 'hst-co',
-        'viewLink': 'https://jkdev.yasuhiro-k.com/'
+        'viewLink': '',
+        'date': 'July 1, 2019'
     },
 ]
 

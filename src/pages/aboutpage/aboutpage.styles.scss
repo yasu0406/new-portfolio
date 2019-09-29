@@ -10,6 +10,7 @@
         height: 100vh;
         padding: 50px;
         background-color: #D2003E;
+        position: relative;
         span {
             font-weight: bold;
         }
@@ -38,10 +39,9 @@
             }
         }
         .close-link {
-            margin-top: 50px;
-            margin-right: 20px;
-            float: right;
-            clear: both;
+            position: absolute;
+            right: 50px;
+            bottom: 50px;
         }
     }
     @media screen and (max-width: 468px){
