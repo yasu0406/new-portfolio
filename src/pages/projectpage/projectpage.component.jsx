@@ -11,7 +11,7 @@ const Project = (props) => {
 
     const projects = useContext(ProjectsContext);
     const projectDetail = projects.filter(project => project.url === props.match.params.title);
-    const {title, description, imgUrl, bgColor, viewLink, projectImg01, projectImg02, projectImg03, date} = projectDetail[0];
+    const {title, description, imgUrl, bgColor, viewLink, projectImg01, projectImg02, projectImg03, date, develop, project, useProgram} = projectDetail[0];
     const mvStyle = {
         backgroundColor: `${bgColor}`,
         backgroundImage: `url(${imgUrl})`,
@@ -52,7 +52,7 @@ const Project = (props) => {
             <ul>
                 <li>
                     <ul className='animated animatedFadeInUp fadeInUp' data-delighter>
-                        <li>Personal Project</li>
+                        <li>{project}</li>
                         <li>{date}</li>
                         <li className='text-red'>
                             {
@@ -63,8 +63,8 @@ const Project = (props) => {
                 </li>
                 <li>
                     <ul className='animated animatedFadeInUp fadeInUp' data-delighter>
-                        <li>Mobile development</li>
-                        <li>React Native, Firebase</li>
+                        <li>{develop}</li>
+                        <li>{useProgram}</li>
                     </ul>
                 </li>
                 <li className='animated animatedFadeInUp fadeInUp' data-delighter>
