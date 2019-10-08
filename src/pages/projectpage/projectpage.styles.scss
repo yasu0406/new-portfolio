@@ -34,7 +34,7 @@
         }
     }
       .load-animation {
-        animation: load-anime 3s forwards;
+        animation: load-anime 1s forwards;
         animation-delay: 1s;
         }
         .main-visual {
@@ -104,6 +104,14 @@
                     }  
                 }
             }
+            > li:nth-child(2) {
+                max-width: 215px;
+                ul {
+                    li:first-child {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
             > li:last-child {
                 max-width: 500px;
             }  
@@ -130,6 +138,9 @@
                flex-direction: column;
                > li {
                    margin-bottom: 40px;
+                }
+                > li:nth-child(2) {
+                    max-width: unset;
                 }
                 > li:last-child {
                     max-width: unset;
