@@ -5,8 +5,6 @@ import './reset.scss';
 import delighters from './delighters';
 import ScrollTop from './ScrollToTop';
 import Home from './pages/homepage/homepage.component';
-import About from './pages/aboutpage/aboutpage.component';
-import Projects from './pages/projectspage/projectspage.component';
 import Project from './pages/projectpage/projectpage.component';
 
 function App() {
@@ -34,8 +32,6 @@ function App() {
       <div className='load-animation'></div>
       <ScrollTop>
         <Route exact path='/' component={Home} />
-        <Route exact path='/about' component={About} />
-        <Route exact path='/projects' component={Projects} />
         <Route exact path='/project/:title' component={Project} />
       </ScrollTop>
     </div>
